@@ -329,6 +329,7 @@ GameObject:
   - component: {fileID: 3925404829148692938}
   - component: {fileID: 3925404829148692940}
   - component: {fileID: 3925404829148692939}
+  - component: {fileID: 3459470756718826531}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -393,7 +394,7 @@ MonoBehaviour:
       Data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   _hatIndex: 0
   playerNameLabel: {fileID: 1154060973}
-  hp: 2
+  _hp: 0
   CanControl: 0
   isDie: 0
   isPlayer: 0
@@ -512,6 +513,23 @@ MonoBehaviour:
     RotTeleportRadians: 1.5
   UseLegacySharedModeInterpolation: 0
   TargetInterpolationDelay: 0.03
+--- !u!114 &3459470756718826531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3925404829148692949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 055d258d6035de04fb9f69a1c2e3643f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSkills:
+  - {fileID: 0}
+  - {fileID: 0}
+  CanSkill: 0000
+  SkillIndex: 0
 --- !u!1 &4742401751004093003
 GameObject:
   m_ObjectHideFlags: 0
