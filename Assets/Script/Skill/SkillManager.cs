@@ -14,7 +14,7 @@ public class SkillManager : MonoBehaviour
 
     public Skill[] GetRandomSkills(int count)
     {
-        Skill[] randomSkills = Skills.ToArray();
+        Skill[] randomSkills = new Skill[count];
         for (int i = 0; i < count; i++)
         {
             randomSkills[i] = Skills[Random.Range(0, Skills.Count)];

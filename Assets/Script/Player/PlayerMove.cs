@@ -212,26 +212,20 @@ public class PlayerMove : NetworkBehaviour
     {
 
     }
-    public void GetSkill()
-    {
-        for (int i = 0; i < stats.HaveSkill_ID.Length; i++)
-        {
-            //if (stats.HaveSkill_ID[i] == null)
-            //{
-            //    stats.HaveSkill_ID[i] = null;
-            //}
-
-
-        }
-
-    }
     #endregion
 
   
-    public void TakeDamage()
+    public void TakeDamage(int Damage)
     {
-        stats.hp--;
+        if (stats.GuardAmount > 0) 
+        {
+            stats.GuardAmount -= Damage;
+            StopCoroutine(DeleteGuard());
+            return;
+        }
+        stats.hp -= Damage;
 
+        
         if(stats.hp >= 1)
         {
             StartCoroutine(ChangeColorCoroutine()); 
@@ -263,6 +257,12 @@ public class PlayerMove : NetworkBehaviour
         {
             StartCoroutine(ReturnGuard(1));
         }
+    }
+    public IEnumerator DeleteGuard()
+    {
+        stats.isGuardSkill = false;
+        yield return new WaitForSeconds(stats.GuardDuration);
+        stats.GuardAmount = 0;
     }
 
     private IEnumerator ReturnGuard(int num)
@@ -349,7 +349,11 @@ public class PlayerMove : NetworkBehaviour
         {
             stats.CanControl = true;
         }
-
+        if(stats.isGuardSkill)
+        {
+            StopCoroutine(DeleteGuard());
+            StartCoroutine(DeleteGuard());
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -11,9 +11,9 @@ public class Projectile : NetworkBehaviour
 {
     public PlayerMove playerMove;
     Rigidbody rb;
-    NetworkObject trGameObject;
     [SerializeField]projectile projectile;
     public Vector3 Target;
+    public int Damage;
     public float Speed;
     public float etc;
     void Start()
@@ -46,7 +46,7 @@ public class Projectile : NetworkBehaviour
                     PlayerMove playerMove = collision.gameObject.GetComponent<PlayerMove>();
                     if (playerMove != null )
                     {
-                        playerMove.TakeDamage();
+                        playerMove.TakeDamage(Damage);
                     }
                 }
                 if (etc != 0)

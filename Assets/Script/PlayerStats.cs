@@ -59,7 +59,8 @@ public class PlayerStats : NetworkBehaviour
     [Space(3f)]
 
     [Header("스킬")]
-    public int[] HaveSkill_ID;
+    public Skill[] playerSkills;
+    public bool isGuardSkill;
     [Space(3f)]
 
     [Header("가드")]
@@ -67,6 +68,8 @@ public class PlayerStats : NetworkBehaviour
     public bool CanGuard;
     public float GuardCool;
     public bool isHitByOtherInGuard;
+    public int GuardAmount;
+    public float GuardDuration;
     [Space(3f)]
 
     [Header("경직")]

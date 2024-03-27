@@ -415,11 +415,14 @@ MonoBehaviour:
   DashCoolTime: 2
   isAttack: 0
   CanAttack: 0
-  HaveSkill_ID: 
+  playerSkills: []
+  isGuardSkill: 0
   isGuard: 0
   CanGuard: 0
   GuardCool: 0
   isHitByOtherInGuard: 0
+  GuardAmount: 0
+  GuardDuration: 0
   isSpasticity: 0
   isTouchingWall: 0
   isTouchingRightWall: 0
@@ -526,6 +529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSkills:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   CanSkill: 0000

@@ -14,9 +14,11 @@ public class AttackArea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.gameObject);
         // 충돌한 객체가 "Player" 태그를 가지고 있는지 확인
         if (other.CompareTag("Player"))
         {
+            
             // 충돌한 객체의 PlayerMove 스크립트 컴포넌트 가져오기
             PlayerMove playerMove = other.GetComponent<PlayerMove>();
 
@@ -24,7 +26,7 @@ public class AttackArea : MonoBehaviour
             if (playerMove != null || !bTrigger)
             {
                 bTrigger = true;
-                playerMove.TakeDamage();
+                playerMove.TakeDamage(1);
             }
         }
     }

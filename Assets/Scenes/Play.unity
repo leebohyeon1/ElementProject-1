@@ -1847,8 +1847,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Skills:
-  - {fileID: 11400000, guid: e6f1b021b30c94641a0676f031ddb72a, type: 2}
   - {fileID: 11400000, guid: 566f46ca389d06b4b915447a02eed8ab, type: 2}
+  - {fileID: 11400000, guid: 46fac9480c89d764ead8dc0ce753d318, type: 2}
+  - {fileID: 11400000, guid: 292f214e3ef70cc4ab1e49fab287b1e5, type: 2}
+  - {fileID: 11400000, guid: e6f1b021b30c94641a0676f031ddb72a, type: 2}
 --- !u!4 &1407693949
 Transform:
   m_ObjectHideFlags: 0
